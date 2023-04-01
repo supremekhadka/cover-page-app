@@ -5,6 +5,7 @@ const form = document.getElementById("input")
 const nameDropDown = document.getElementById("name");
 const subject      = document.getElementById("subject");
 const assignmentNo = document.getElementById("assignmentNo");
+const date         = document.getElementById("date");
 const titlePara    = document.getElementById("title-name");
 var currentData    = null;
 
@@ -74,12 +75,13 @@ form.addEventListener("input", (e) => {
     titlePara.innerHTML = ""
     if (nameDropDown.value && subject.value && assignmentNo.value) {
         let dataObj = {
-            name: nameDropDown.value,
+            name: nameDropDown.value.toProperCase(),
             rollNo: students[nameDropDown.selectedIndex].rollNo,
             subject: subject.value,
             subjectFull: subject.value=='DL'?"DIGITAL LOGIC" : subject.value=="IIT" ? "INTRODUCTION TO INFORMATION TECHNOLOGY" : "C-PROGRAMMING",
             assignmentNo: assignmentNo.value,
             section: students[nameDropDown.selectedIndex].intRoll < 24 ? 'A' : 'B',
+            date: date.value,
         };
         dataObj["submittedTo"] = getSubmittedToName(dataObj);
 
@@ -105,3 +107,22 @@ function getSubmittedToName(obj) {
     if (obj.subject=='IIT') return "Ujjwal Shrestha";
     return "Sudan Maharjan";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
