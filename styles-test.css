@@ -15,8 +15,8 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Oswald";
-  padding: 20%;
-  background-color: #f4b11a;
+
+  background-color: #ece5bb;
 }
 
 header {
@@ -25,10 +25,11 @@ header {
   justify-content: center;
   align-items: center;
   color: #1e164f;
+  text-align: center;
 }
 
 header img {
-  width: 150px;
+  width: 175px;
   margin-bottom: 10px;
 }
 
@@ -57,7 +58,7 @@ form select {
   width: 300px;
   outline: none;
   border: none;
-  box-shadow: 7px 7px #1b1b1bc5;
+  box-shadow: 6.25px 6.25px #201f1a9f;
 }
 
 form input {
@@ -66,7 +67,7 @@ form input {
   width: 300px;
   outline: none;
   border: none;
-  box-shadow: 7px 7px #1b1b1b;
+  box-shadow: 6.25px 6.25px #201f1a9f;
 }
 
 form button {
@@ -74,19 +75,14 @@ form button {
   border: none;
   background-color: #1e164f;
   color: #f5f9fa;
-  box-shadow: 7px 7px #251b04;
+  box-shadow: 6.25px 6.25px #030303a4;
   font-size: 1rem;
 }
 
 form button:hover {
-  background-color: #7967f0;
+  background-color: #2a1f74;
 }
 
 #title-name {
   display: none;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1e164f;
-  border-radius: 5px;
 }
