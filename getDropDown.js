@@ -77,13 +77,31 @@ form.addEventListener("input", (e) => {
             name: nameDropDown.value,
             rollNo: students[nameDropDown.selectedIndex].rollNo,
             subject: subject.value,
-            assignmentNo: assignmentNo.value
+            subjectFull: subject.value=='DL'?"DIGITAL LOGIC" : subject.value=="IIT" ? "INTRODUCTION TO INFORMATION TECHNOLOGY" : "C-PROGRAMMING",
+            assignmentNo: assignmentNo.value,
+            section: students[nameDropDown.selectedIndex].intRoll < 24 ? 'A' : 'B',
         };
+        dataObj["submittedTo"] = getSubmittedToName(dataObj);
+
         temp = getAssignmentTitle(subject.value, assignmentNo.value);
         if (temp) {
             dataObj.assignmentTitle = temp;
+            currentData = dataObj;
+            showDataPreview(dataObj);
         }
-        currentData = dataObj;
-        showDataPreview(dataObj);
+        else {
+            showDataPreview(dataObj);
+            dataObj.assignmentTitle = "";
+            currentData = dataObj;
+        }
     }
 });
+
+function getSubmittedToName(obj) {
+    if (obj.subject=="DL") {
+        if (obj.section=='A') return "Rabin Maharjan";
+        if (obj.section=='B') return "Bishnu KC";
+    }
+    if (obj.subject=='IIT') return "Ujjwal Shrestha";
+    return "Sudan Maharjan";
+}
