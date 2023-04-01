@@ -19,8 +19,9 @@
   </head>
   <body>
     <header>
-      <h2>SXC CS 26'</h2>
-      <h1>Cover Page Generator</h1>
+      <img src="logo_image.png" alt="SXC's Logo" />
+      <h2>SXC CS First Semester</h2>
+      <h1>COVER PAGE GENERATOR</h1>
     </header>
     <form id="input">
       <select id="name" required></select>
@@ -32,15 +33,16 @@
       </select>
       <input
         id="assignmentNo"
-        placeholder="assignment number"
+        placeholder="ASSIGNMENT NUMBER"
         type="number"
         min="1"
         required
       />
 
-      <button type="submit">generate</button>
-      <div id="title-name"></div>
+      <input type="date" required id="date" />
+      <button type="submit">Generate</button>
     </form>
+    <!-- <div id="title-name"></div> -->
 
     <script src="getDropDown.js"></script>
     <script src="docxIO.js"></script>
