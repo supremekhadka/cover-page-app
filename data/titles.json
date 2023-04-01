@@ -1,0 +1,25 @@
+{
+    "DL": [
+        "To verify the basic operation of logic gates.\n",
+        "To verify the operation of 3 input AND and OR gate using multiple gates.\n",
+        "To verify the operation of 3 input AND and OR gate using single gate.\n",
+        "To verify the operation of derived gates.\n",
+        "To verify the universality of NAND gate and NOR gate\n",
+        "To verify 2 and 3 variable De-Morgan's Law\n",
+        "To verify the operation of Half Adder circuit.\nTo verify the operation of Full Adder circuit.\nTo construct a Full Adder using 2 Half Adders and verify its operation.\n",
+        "To verify the operation of Half Subtractor circuit\nTo verify the operation of full subtractor circuit.\n",
+        "To design bcd to excess 3 code converter.\n",
+        "To design 3-bit parity generator.\nTo design 4-bit parity checker.\n",
+        "To verify the operation of 2x4 decoder\nTo verify the operation of 3x8 decoder\nTo verify the operation of 4x16 decoder\n",
+        "To verify the operation of bcd to decimal decoder\n",
+        "To construct a full adder using required decoders.\nTo construct a full subtractor using required decoders.\n",
+        "To verify the operation of 2x1 encoder.\nTo verify the operation of 4x2 encoder.\nTo verify the operation of 8x3 encoder.\nTo verify the operation of 16x4 encoder.\n",
+        "To construct 4 to 1 multiplexer.\nTo construct 8 to 1 multiplexer using smaller blocks\nTo construct 16 to 1 multiplexer using smaller blocks\n",
+        "To construct 1x4 demultiplexer\nTo construct 1x8 demultiplexer using smaller blocks.\nTo construct 1x16 demultiplexer using smaller blocks\n",
+        "To construct Serial In Serial Out Shift Register\nTo construct Serial In parallel Out Shift Register\nTo construct Parallel In Serial Out Shift Register.\nTo construct Parallel In Parallel Out Shift Register.\n",
+        "To construct a 2-bit asynchronous counter\nTo construct a 4-bit asynchronous counter\n",
+        "To construct a BCD asynchronous counter\n",
+        "To construct a 2-bit synchronous counter\nTo construct a 4-bit synchronous counter\n",
+        " To construct a BCD synchronous counter\n"
+    ]
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.6.0/dist/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/docxtemplater@4.12.1/dist/docxtemplater.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.36.1/docxtemplater.js"></script>
+    <script src="https://unpkg.com/pizzip@3.1.4/dist/pizzip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+    <script src="https://unpkg.com/pizzip@3.1.4/dist/pizzip-utils.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form id="input">
+        <select id='name' required></select>
+        
+        <select id="subject">
+            <option value="DL">DL</option>
+            <option value="C Programming">C Programming</option>
+            <option value="IIT">IIT</option>
+        </select>
+        <input id='assignmentNo' placeholder="assignment number" type="number" min="1" required>
+
+        <button type="submit">generate</button>
+        <div id="title-name"></div>
+    </form>
+    
+    <script src="getDropDown.js"></script>
+    <script src="docxIO.js"></script>
+</body>
+</html>
