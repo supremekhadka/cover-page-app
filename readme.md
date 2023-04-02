@@ -1,7 +1,5 @@
 # cover-page-app
 
-> open `./temp.html` for backend one
-
 ## working:
 1. gets user input (name, subject, assignmentNo)
 2. autogenerates rest of other attributes
