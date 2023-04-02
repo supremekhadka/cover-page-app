@@ -4,218 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.4.js"
-      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>Cover Page</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.6.0/dist/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/docxtemplater@4.12.1/dist/docxtemplater.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.36.1/docxtemplater.js"></script>
+    <script src="https://unpkg.com/pizzip@3.1.4/dist/pizzip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+    <script src="https://unpkg.com/pizzip@3.1.4/dist/pizzip-utils.js"></script>
+
+    <title>Document</title>
   </head>
   <body>
-    <div class="page" id="page">
-      <img class="headerImg" src="./header_image.png" />
-      <img class="logoImg" src="./logo_image.png" />
-      <div class="text">
-        <h1 style="text-transform: uppercase">
-          DEPARTMENT OF <span id="departmentName"></span>
-        </h1>
+    <header>
+      <img src="logo_image.png" alt="SXC's Logo" />
+      <h2>SXC CS First Semester</h2>
+      <h1>COVER PAGE GENERATOR</h1>
+    </header>
+    <form id="input">
+      <select id="name" required></select>
 
-        <h2 style="margin-top: 2mm">
-          Lab Assignment <span id="assignmentNumber"></span>
-        </h2>
+      <select id="subject">
+        <option value="DL">DL</option>
+        <option value="C Programming">C Programming</option>
+        <option value="IIT">IIT</option>
+      </select>
+      <input
+        id="assignmentNo"
+        placeholder="ASSIGNMENT NUMBER"
+        type="number"
+        min="1"
+        required
+      />
 
-        <br />
+      <input type="date" required id="date" />
+      <button type="submit">Generate</button>
+    </form>
+    <div id="title-name"></div>
 
-        <h3 style="margin-top: 0mm">Title of the assignment</h3>
-
-        <p
-          style="
-            width: 80%;
-            text-align: center;
-            margin-top: 2mm;
-            font-size: 1.35rem;
-            text-transform: uppercase;
-            white-space: normal;
-          "
-          id="assignmentTitle"
-        ></p>
-
-        <br />
-        <!-- Submitted By Table -->
-        <h3 style="margin: 2mm 0">Submitted By</h3>
-        <table>
-          <tr>
-            <th>Name of the Student</th>
-            <th>Class, Roll No., and Section</th>
-          </tr>
-
-          <tr>
-            <td id="studentName" style="text-transform: capitalize"></td>
-            <td id="classRollSection" style="text-transform: uppercase"></td>
-          </tr>
-        </table>
-
-        <!-- Submitted To Table -->
-        <h3 style="margin: 2mm 0">Submitted To</h3>
-        <table id="table2">
-          <tr>
-            <th>Name of the Faculty</th>
-            <th>Signature</th>
-            <th>Remarks</th>
-          </tr>
-
-          <tr>
-            <td
-              id="facultyName1"
-              style="width: 45%; text-transform: capitalize"
-            ></td>
-            <td class="signature"></td>
-            <td class="remarks"></td>
-          </tr>
-        </table>
-      </div>
-      <p style="position: absolute; bottom: 10mm; font-size: 1.15rem">
-        Date of Submission:
-        <span id="dateOfSubmission"></span>
-      </p>
-    </div>
-    <div class="controls">
-      <form id="form">
-        <div class="form-group">
-          <label>Department's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder=""
-            onkeyUp="document.getElementById('departmentName').innerHTML = this.value"
-          />
-        </div>
-        <div class="form-group">
-          <label>Assignment Number</label>
-          <input
-            type="number"
-            class="form-control"
-            placeholder=""
-            onkeyUp="document.getElementById('assignmentNumber').innerHTML = this.value"
-          />
-        </div>
-        <div class="form-group">
-          <label>Assignment Title</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder=""
-            onkeyUp="document.getElementById('assignmentTitle').innerHTML = this.value"
-          />
-        </div>
-        <div class="form-group">
-          <label>Student's Name</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder=""
-            onkeyUp="document.getElementById('studentName').innerHTML = this.value"
-          />
-        </div>
-        <div class="form-group">
-          <label>Student's Class, Roll No., and Section</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="022BSCIT000 'X'"
-            onkeyUp="document.getElementById('classRollSection').innerHTML = this.value"
-          />
-        </div>
-        <div class="form-group">
-          <label>Teacher/Faculty 1</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Er/Mr. Full Name"
-            onkeyUp="document.getElementById('facultyName1').innerHTML = this.value"
-          />
-        </div>
-      </form>
-      <form>
-        <div class="form-group">
-          <label for="dateOfSubmission">Date of Submission</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="DD MMM, YYYY"
-            onkeyUp="document.getElementById('dateOfSubmission').innerHTML = this.value"
-          />
-        </div>
-      </form>
-      <div class="btnRows">
-        <button id="btnAddRow" onclick="addRow()" id="button">
-          Add Faculty
-        </button>
-        <button id="btnDelRow" onclick="delRow()" id="button">
-          Delete Faculty
-        </button>
-        <button id="generatePDF">Download</button>
-      </div>
-    </div>
+    <script src="getDropDown.js"></script>
+    <script src="docxIO.js"></script>
   </body>
-  <script>
-    const btnAddRow = document.getElementById("btnAddRow");
-    const table = document.getElementById("table2");
-    const body = document.getElementsByName("body");
-    const form = document.getElementById("form");
-    let facultyCount = "1";
-
-    function addRow() {
-      if (table.rows.length <= 3) {
-        facultyCount++;
-        table.innerHTML += `
-          <tr>
-            <td id="facultyName${facultyCount}" style="width: 45%; text-transform: capitalize" text-transform: capitalize">${""}</td>
-            <td class="signature" >${""}</td>
-            <td class="remarks" >${""}</td>
-          </tr>`;
-        form.innerHTML += `
-        <div class="form-group">
-          <label >Teacher/Faculty ${facultyCount}</label>
-          <input
-            type="text"
-            class="form-control facultyName"
-            id="formGroupExampleInput2"
-            placeholder="Er/Mr. Full Name"
-            onkeyUp="document.getElementById('facultyName${facultyCount}').innerHTML = this.value"
-          />
-        </div>
-        `;
-      }
-    }
-
-    function delRow() {
-      if (table.rows.length > 2) {
-        table.deleteRow(-1);
-        form.removeChild(form.lastElementChild);
-        facultyCount--;
-      }
-    }
-
-    let generatePDF = document.getElementById("generatePDF");
-    let createpdf = document.getElementById("page");
-    let opt = {
-      margin: -1,
-      filename: "CoverPage.pdf",
-      html2canvas: {
-        scale: 10,
-      },
-      jsPDF: {
-        unit: "mm",
-        format: [210, 297],
-        orientation: "portrait",
-        compress: "false",
-      },
-    };
-    generatePDF.addEventListener("click", function () {
-      html2pdf().set(opt).from(createpdf).save();
-    });
-  </script>
 </html>

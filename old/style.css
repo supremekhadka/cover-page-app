@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.7rem;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f6f8ff;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 210mm;
+  height: 297mm;
+  background-color: #fff;
+  font-family: "Times New Roman", Times, serif;
+  box-shadow: 0 10px 40px #1b1b1b23;
+  border-radius: 20px;
+  padding: 0 50px;
+  overflow: hidden;
+}
+
+.page .headerImg {
+  display: block;
+  position: absolute;
+  width: 160mm;
+  height: auto;
+  top: 10mm;
+}
+
+.page .logoImg {
+  display: block;
+  position: absolute;
+  width: 60mm;
+  height: auto;
+  top: 50mm;
+}
+
+.page .text {
+  position: absolute;
+  top: 130mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.page table {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.page table,
+th,
+td {
+  height: 10mm;
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-weight: 200;
+  width: 600px;
+}
+
+.page td {
+  height: 14mm;
+}
+
+.controls {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: -100px;
+  gap: 50px;
+  font-family: "Poppins" !important;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+  height: max-content;
+  font-family: "Poppins";
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #1b1b1b;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  color: #fff;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.form-group label {
+  margin-left: 2px;
+  margin: 3px 0;
+}
+
+.form-group input {
+  margin: 5px 0;
+  width: 300px;
+  height: 38px;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.btnRows button {
+  outline: none;
+  border: none;
+  background-color: #1b1b1b;
+  color: #fff;
+  font-weight: 500;
+  font-family: "Poppins";
+  width: 150px;
+  height: 50px;
+  border-radius: 8px;
+  margin: 0px 3px;
+  font-size: 1.05rem;
+}
+
+.btnRows button:hover {
+  background-color: #00105a;
+}
