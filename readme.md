@@ -1,6 +1,6 @@
-# cover-page-app
+# Cover-page-app
 
-## working:
+## Working:
 1. gets user input (name, subject, assignmentNo)
 2. autogenerates rest of other attributes
 3. opens corresponding template 'docx' file
@@ -9,4 +9,4 @@
 
 > there might still be bugs somewhere
 
-[##Live Demo](https://supremekhadka2.github.io/cover-page-app/)
+[Live Demo](https://supremekhadka2.github.io/cover-page-app/)
